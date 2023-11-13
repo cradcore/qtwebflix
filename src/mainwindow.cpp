@@ -95,7 +95,8 @@ MainWindow::MainWindow(QWidget *parent)
   keyCtrlF5->setKey(Qt::CTRL + Qt::Key_F5); // Set the key code
   connect(keyCtrlF5, SIGNAL(activated()), this, SLOT(slotShortcutCtrlF5()));
 
-  this->webview->page()->profile()->setHttpUserAgent("Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0");
+  // Sets the browser useragent
+  this->webview->page()->profile()->setHttpUserAgent("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36");
 
   // Connect finished loading boolean
   connect(webview, &QWebEngineView::loadFinished, this,

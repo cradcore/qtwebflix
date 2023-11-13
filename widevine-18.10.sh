@@ -21,9 +21,9 @@ tmp_dir=$(mktemp -d)
 echo $tmp_dir
 
 #set urls and checksums
-url1="https://www.slimjet.com/chrome/download-chrome.php?file=lnx%2Fchrome64_66.0.3359.181.deb"
+url1="https://www.slimjet.com/chrome/download-chrome.php?file=files%2F104.0.5112.102%2Fgoogle-chrome-stable_current_amd64.deb
 file1=$(basename "$url1")
-sha256_1=("229b35f0d41bbb6edd98ce4ab8305994a0f5cd1ac4d9817571f07365b2d1ad80")
+sha256_1=("5c13ccf359afc2f98d28513e51b15e3f1e88c4c34f8ac2b83983f2f246ac42b2"
 
 #Download Files
 wget $url1 -P $tmp_dir

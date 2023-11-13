@@ -21,7 +21,7 @@ tmp_dir=$(mktemp -d)
 echo $tmp_dir
 
 #set urls and checksums
-url1=https://archive.archlinux.org/packages/c/chromium/chromium-61.0.3163.100-1-x86_64.pkg.tar.xz
+url1=https://archive.archlinux.org/packages/c/chromium/chromium-100.0.4896.127-1-x86_64.pkg.tar.zst
 file1=$(basename "$url1")
 url2=https://dl.google.com/widevine-cdm/1.4.8.1008-linux-x64.zip
 file2=$(basename "$url2")
