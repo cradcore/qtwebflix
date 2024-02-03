@@ -95,8 +95,12 @@ MainWindow::MainWindow(QWidget *parent)
   keyCtrlF5->setKey(Qt::CTRL + Qt::Key_F5); // Set the key code
   connect(keyCtrlF5, SIGNAL(activated()), this, SLOT(slotShortcutCtrlF5()));
 
-  // Sets the browser useragent
+  /* The old useragent - kept here for compatibility
   this->webview->page()->profile()->setHttpUserAgent("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36");
+*/
+
+// Set user agent to Edge as most websites offer the best compatibility with it
+this->webview->page()->profile()->setHttpUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edge/120.0.0.");
 
   // Connect finished loading boolean
   connect(webview, &QWebEngineView::loadFinished, this,
