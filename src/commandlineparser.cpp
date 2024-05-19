@@ -35,6 +35,10 @@ Commandlineparser::Commandlineparser() {
                                "main", "Do not use HD addon, you will be limited to 720p"));
   parser.addOption(nonHD);
 
+  QCommandLineOption fullscreen(QStringList() << "f" << "fullscreen",
+                                QCoreApplication::translate("main", "Start qtwebflix in fullscreen"));
+  parser.addOption(fullscreen);
+
   QStringList webOptions = {"--register-pepper-plugins",
                             "--disable-seccomp-filter-sandbox",
                             "--disable-logging",
@@ -78,12 +82,19 @@ Commandlineparser::Commandlineparser() {
   } else {
     nonHDset_ = false;
   }
+
+  if (parser.isSet(fullscreen)) {
+    fullscreenSet_ = true;
+  } else {
+    fullscreenSet_ = false;
+  }
 }
 
 bool Commandlineparser::providerIsSet() const { return providerSet_; }
 
 bool Commandlineparser::userAgentisSet() const { return userAgentset_; }
 bool Commandlineparser::nonHDisSet() const { return nonHDset_; }
+bool Commandlineparser::fullscreenIsSet() const { return fullscreenSet_; }
 
 QString Commandlineparser::getProvider() const { return provider_; }
 

@@ -11,12 +11,14 @@ public:
   bool providerIsSet() const;
   bool userAgentisSet() const;
   bool nonHDisSet() const;
+  bool fullscreenIsSet() const;
 private:
   QString provider_;
   QString userAgent_;
   bool providerSet_;
   bool userAgentset_;
   bool nonHDset_;
+  bool fullscreenSet_;
 };
 
 #endif // COMMANDLINEPARSER_H
